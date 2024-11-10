@@ -38,6 +38,7 @@ RUN \
     libgstreamer-plugins-bad1.0 \
     libgstreamer-plugins-base1.0 \
     libwebkit2gtk-4.0-37 \
+    libwebkit2gtk-4.1-0 \
     libwx-perl && \
   echo "**** install prucaslicer from appimage ****" && \
   if [ -z ${PRUCASLICER_URL+x} ]; then \
