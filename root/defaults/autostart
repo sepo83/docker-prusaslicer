@@ -1,1 +1,1 @@
-/opt/prusaslicer/AppRun
+flatpak run com.prusa3d.PrusaSlicer
