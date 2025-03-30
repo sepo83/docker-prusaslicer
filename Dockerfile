@@ -20,7 +20,6 @@ RUN \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive \
   apt-get install --no-install-recommends -y \
-    jq \
     firefox-esr \
     gstreamer1.0-alsa \
     gstreamer1.0-gl \
@@ -31,7 +30,7 @@ RUN \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-ugly \
     gstreamer1.0-pulseaudio \
-    gstreamer1.0-qt5 \
+    gstreamer1.0-qt5 \e
     gstreamer1.0-tools \
     gstreamer1.0-x \
     libgstreamer1.0 \
@@ -39,9 +38,9 @@ RUN \
     libgstreamer-plugins-base1.0 \
     libwebkit2gtk-4.0-37 \
     libwebkit2gtk-4.1-0 \
-    libwx-perl && \
+    libwx-perl \
+    flatpak && \
   echo "**** install prucaslicer from flattpack ****" && \
-  apt-get install flatpak && \
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo && \
   flatpak install flathub com.prusa3d.PrusaSlicer &&\
   echo "**** cleanup ****" && \
