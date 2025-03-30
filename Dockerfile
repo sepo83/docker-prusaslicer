@@ -41,7 +41,7 @@ RUN \
     libwx-perl \
     flatpak && \
   echo "**** install prucaslicer from flattpack ****" && \
-  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo && \
+  flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo && \
   flatpak install --user --noninteractive flathub com.prusa3d.PrusaSlicer && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
