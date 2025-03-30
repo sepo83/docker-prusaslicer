@@ -30,7 +30,7 @@ RUN \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-ugly \
     gstreamer1.0-pulseaudio \
-    gstreamer1.0-qt5 \e
+    gstreamer1.0-qt5 \
     gstreamer1.0-tools \
     gstreamer1.0-x \
     libgstreamer1.0 \
