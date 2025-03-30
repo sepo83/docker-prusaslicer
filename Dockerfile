@@ -40,18 +40,10 @@ RUN \
     libwebkit2gtk-4.0-37 \
     libwebkit2gtk-4.1-0 \
     libwx-perl && \
-  echo "**** install prucaslicer from appimage ****" && \
-  if [ -z ${PRUCASLICER_URL+x} ]; then \
-    PRUSASLICER_URL=$(curl -sX GET "https://api.github.com/repos/prusa3d/PrusaSlicer/releases/latest" | \
-	jq -r '.assets[].browser_download_url' | grep linux-x64 | grep GTK3 | grep .AppImage | sed 's/%2B/\+/g'); \
-  fi && \
-  cd /tmp && \
-  curl -o \
-    /tmp/prusa.app -L \
-    ${PRUSASLICER_URL} && \
-  chmod +x /tmp/prusa.app && \
-  ./prusa.app --appimage-extract && \
-  mv squashfs-root /opt/prusaslicer && \
+  echo "**** install prucaslicer from flattpack ****" && \
+  apt-get install flatpak && \
+  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo && \
+  flatpak install flathub com.prusa3d.PrusaSlicer &&\
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
